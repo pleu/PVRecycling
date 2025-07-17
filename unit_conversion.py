@@ -9,11 +9,19 @@ Original file is located at
 
 import pandas as pd
 
+
 def load_conversion_constants(year):
-  """Load conversion constants from a CSV file based on the year."""
-  filename = f"./data/solar_module_data.csv"
-  constants_df = pd.read_csv(filename)
-  constants = constants_df.set_index('parameter')['value'].to_dict()
+  """Load conversion constants for the given year from a wide-format CSV."""
+  filename = "./data/solar_module_data.csv"
+  df = pd.read_csv(filename)
+
+  # Find the row matching the year
+  row = df[df['year'] == year]
+  if row.empty:
+    raise ValueError(f"No data found for year {year}")
+
+  # Drop the 'year' column and convert the rest to a dictionary
+  constants = row.drop(columns='year').iloc[0].to_dict()
   return constants
 
 def build_conversion_matrix(year):
