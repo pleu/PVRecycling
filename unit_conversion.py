@@ -11,7 +11,7 @@ import pandas as pd
 
 def load_conversion_constants(year):
   """Load conversion constants from a CSV file based on the year."""
-  filename = f"conversion_constants_{year}.csv"
+  filename = f"./data/conversion_constants_{year}.csv"
   constants_df = pd.read_csv(filename)
   constants = constants_df.set_index('parameter')['value'].to_dict()
   return constants
