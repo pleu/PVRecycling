@@ -9,24 +9,37 @@ Original file is located at
 
 import pandas as pd
 
-Wp_per_m2 = 1000
-# Conversion constants for poly-Si
-kg_per_cell = 0.015  # poly-Si to wafer, ITRPV 2020
-# cell_active_area = 0.0244  # m^2
-cell_active_area = 0.024566  # m^2
-efficiency = 0.215
-wp_per_cell = cell_active_area*efficiency*Wp_per_m2
-cell_to_module_ratio = 0.98
-cells_per_module = 60
+def load_conversion_constants(year):
+  """Load conversion constants from a CSV file based on the year."""
+  filename = f"conversion_constants_{year}.csv"
+  constants_df = pd.read_csv(filename)
+  constants = constants_df.set_index('parameter')['value'].to_dict()
+  return constants
 
-cells_per_kg = 1 / kg_per_cell
-kg_per_module = kg_per_cell * cells_per_module
-wp_per_module = wp_per_cell* cells_per_module*cell_to_module_ratio
+def build_conversion_matrix(year):
+  constants = load_conversion_constants(year)
+  Wp_per_m2 = 1000
+  # Conversion constants for poly-Si
 
-units = ['kg', 'wafer', 'cell', 'module', 'Wp']
-conversion_matrix = pd.DataFrame(1.0, index=units, columns=units)
+  # Extract constants
+  kg_per_cell = constants['kg_per_cell']
+  cell_active_area = constants['cell_active_area']
+  efficiency = constants['efficiency']
+  cell_to_module_ratio = constants.get('cell_to_module_ratio', 0.98)
+  cells_per_module = constants.get('cells_per_module', 60)
 
-conversions = {
+  wp_per_cell = cell_active_area * efficiency * Wp_per_m2
+  cells_per_kg = 1 / kg_per_cell
+  kg_per_module = kg_per_cell * cells_per_module
+  wp_per_module = wp_per_cell * cells_per_module * cell_to_module_ratio
+
+  units = ['kg', 'wafer', 'cell', 'module', 'Wp']
+  conversion_matrix = pd.DataFrame(1.0, index=units, columns=units)
+
+  units = ['kg', 'wafer', 'cell', 'module', 'Wp']
+  conversion_matrix = pd.DataFrame(1.0, index=units, columns=units)
+
+  conversions = {
     ('kg', 'cell'): kg_per_cell,
     ('wafer', 'cell'): 1,
     ('kg', 'wafer'): kg_per_cell,
@@ -37,29 +50,27 @@ conversions = {
     ('Wp', 'wafer'): wp_per_cell,
     ('Wp', 'module'): wp_per_module,
     ('Wp', 'kg'): wp_per_cell / kg_per_cell,
-}
-
-for (from_unit, to_unit), factor in conversions.items():
+  }
+  for (from_unit, to_unit), factor in conversions.items():
     conversion_matrix.at[from_unit, to_unit] = factor
     conversion_matrix.at[to_unit, from_unit] = 1 / factor
 
-def convert_dataframe_units(df, target_unit, conversion_matrix=conversion_matrix):
-    df_converted = df.copy()
+  return conversion_matrix
 
-    def convert_row(row):
-        from_unit = row['Unit']
-        if from_unit == target_unit:
-            return row
-        factor = conversion_matrix.at[from_unit, target_unit]
-        row['Process Cost'] *= factor
-        low, high = row['Process Cost Range']
-        row['Process Cost Range'] = (low * factor, high * factor)
-        row['Unit'] = target_unit
-        return row
+def convert_dataframe_units(df, target_unit, conversion_matrix):
+  """Convert the units of a dataframe using the conversion matrix."""
+  df_converted = df.copy()
 
-    return df_converted.apply(convert_row, axis=1)
+  def convert_row(row):
+    from_unit = row['Unit']
+    if from_unit == target_unit:
+      return row
+    factor = conversion_matrix.at[from_unit, target_unit]
+    row['Process Cost'] *= factor
+    low, high = row['Process Cost Range']
+    row['Process Cost Range'] = (low * factor, high * factor)
+    row['Unit'] = target_unit
+    return row
 
-conversion_matrix
-
-
+  return df_converted.apply(convert_row, axis=1)
 
