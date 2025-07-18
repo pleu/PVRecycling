@@ -8,6 +8,7 @@ Original file is located at
 """
 
 import pandas as pd
+from input_output import read_csv_file
 
 def build_conversion_matrix(year):
   filename = "./data/solar_module_data.csv"
