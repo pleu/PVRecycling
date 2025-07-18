@@ -1,11 +1,5 @@
 import pandas as pd
-
-def read_conversion_constants(filename, year):
-  df = pd.read_csv(filename)
-  rows = df[df['Year'] == year]
-  if rows.empty:
-    raise ValueError(f"No data found for year {year}")
-  return rows.drop(columns='Year').iloc[0].to_dict()
+from input_output import read_conversion_constants
 
 def build_conversion_matrix(year):
   filename = "./data/solar_module_data.csv"
