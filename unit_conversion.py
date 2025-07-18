@@ -7,22 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1ACzXyQ2jdqiHxcdBWqZz3KQZjSaXLpIQ
 """
 
-import pandas as pd
-
-
-def read_csv_file(filename, year):
-  df = pd.read_csv(filename)
-
-  # Find the row matching the year
-  row = df[df['year'] == year]
-  if row.empty:
-    raise ValueError(f"No data found for year {year} in {filename}")
-
-  # Drop the 'year' column and convert the rest to a dictionary
-  constants = row.drop(columns='year').iloc[0].to_dict()
-  return constants
-
-def build_conversion_matrix(year):
+import pandas as pddef build_conversion_matrix(year):
   filename = "./data/solar_module_data.csv"
   variables = read_csv_file(filename, year)
   Wp_per_m2 = 1000
