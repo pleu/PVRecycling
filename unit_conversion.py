@@ -1,9 +1,15 @@
 import pandas as pd
-from input_output import read_csv_file
+
+def read_conversion_constants(filename, year):
+  df = pd.read_csv(filename)
+  rows = df[df['Year'] == year]
+  if rows.empty:
+    raise ValueError(f"No data found for year {year}")
+  return rows.drop(columns='Year').iloc[0].to_dict()
 
 def build_conversion_matrix(year):
   filename = "./data/solar_module_data.csv"
-  variables = read_csv_file(filename, year)
+  variables = read_conversion_constants(filename, year)
   Wp_per_m2 = 1000
   # Conversion constants for poly-Si
 
