@@ -53,8 +53,8 @@ def convert_dataframe_units(df, target_unit, conversion_matrix):
       return row
     factor = conversion_matrix.at[from_unit, target_unit]
     row['Process Cost'] *= factor
-    low, high = row['Process Cost Range']
-    row['Process Cost Range'] = (low * factor, high * factor)
+    row['Process Cost Min'] *= factor
+    row['Process Cost Max'] *= factor
     row['Unit'] = target_unit
     return row
 
