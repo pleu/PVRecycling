@@ -10,31 +10,30 @@ Original file is located at
 import pandas as pd
 
 
-def load_conversion_constants(year):
-  """Load conversion constants for the given year from a wide-format CSV."""
-  filename = "./data/solar_module_data.csv"
+def read_csv_file(filename, year):
   df = pd.read_csv(filename)
 
   # Find the row matching the year
   row = df[df['year'] == year]
   if row.empty:
-    raise ValueError(f"No data found for year {year}")
+    raise ValueError(f"No data found for year {year} in {filename}")
 
   # Drop the 'year' column and convert the rest to a dictionary
   constants = row.drop(columns='year').iloc[0].to_dict()
   return constants
 
 def build_conversion_matrix(year):
-  constants = load_conversion_constants(year)
+  filename = "./data/solar_module_data.csv"
+  variables = read_csv_file(filename, year)
   Wp_per_m2 = 1000
   # Conversion constants for poly-Si
 
   # Extract constants
-  kg_per_cell = constants['kg_per_cell']
-  cell_active_area = constants['cell_active_area']
-  efficiency = constants['efficiency']
-  cell_to_module_ratio = constants.get('cell_to_module_ratio', 0.98)
-  cells_per_module = constants.get('cells_per_module', 60)
+  kg_per_cell = variables['kg_per_cell']
+  cell_active_area = variables['cell_active_area']
+  efficiency = variables['efficiency']
+  cell_to_module_ratio = variables.get('cell_to_module_ratio', 0.98)
+  cells_per_module = variables.get('cells_per_module', 60)
 
   wp_per_cell = cell_active_area * efficiency * Wp_per_m2
   cells_per_kg = 1 / kg_per_cell
