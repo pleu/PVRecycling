@@ -7,7 +7,9 @@ Original file is located at
     https://colab.research.google.com/drive/1ACzXyQ2jdqiHxcdBWqZz3KQZjSaXLpIQ
 """
 
-import pandas as pddef build_conversion_matrix(year):
+import pandas as pd
+
+def build_conversion_matrix(year):
   filename = "./data/solar_module_data.csv"
   variables = read_csv_file(filename, year)
   Wp_per_m2 = 1000
