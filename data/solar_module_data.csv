@@ -1,2 +1,4 @@
 Year,kg_per_cell,cell_active_area,efficiency,cell_to_module_ratio,cells_per_module
 2020,0.015,0.024566,0.215,0.98,60
+2025,0.016,0.0311,0.23,0.99,120
+

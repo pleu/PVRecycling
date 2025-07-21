@@ -1,17 +1,17 @@
-Production Step,Unit,Distribution,Process Cost,Year,Process Cost Min,Process Cost Max
-Purchase mg-Si,kg,Log-normal,3.97,2025,3.18,4.76
-SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,9.5,2025,7.6,11.4
-Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.36,2025,0.29,0.43
-Mono PERC cell (exclude wafer cost),cell,Log-normal,0.32,2025,0.26,0.38
-Mono PERC module (exclude cell cost),module,Log-normal,49.0,2025,39.0,59.0
-Recycled mg-Si,kg,Uniform,2.38,2025,0.0,4.76
-Recycled SOG poly-Si,kg,Uniform,7.65,2025,0.0,15.3
-Recycled Mono wafer,cell,Uniform,0.3675,2025,0.0,0.735
-Purchase mg-Si,kg,Log-normal,2.5,2020,2.0,3.0
-SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,7.2,2020,5.8,8.6
-Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.24,2020,0.19,0.29
-Mono PERC cell (exclude wafer cost),cell,Log-normal,0.22,2020,0.17,0.26
-Mono PERC module (exclude cell cost),module,Log-normal,39.0,2020,31.0,47.0
-Recycled mg-Si,kg,Uniform,1.5,2020,0.0,3.0
-Recycled SOG poly-Si,kg,Uniform,5.8,2020,0.0,11.6
-Recycled Mono wafer,cell,Uniform,0.245,2020,0.0,0.49
+Year,Production Step,Unit,Distribution,Process Cost,Process Cost Min,Process Cost Max
+2025,Purchase mg-Si,kg,Log-normal,3.97,3.18,4.76
+2025,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,9.5,7.6,11.4
+2025,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.36,0.29,0.43
+2025,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.32,0.26,0.38
+2025,Mono PERC module (exclude cell cost),module,Log-normal,49.0,39.0,59.0
+2025,Recycled mg-Si,kg,Uniform,2.38,0.0,4.76
+2025,Recycled SOG poly-Si,kg,Uniform,7.65,0.0,15.3
+2025,Recycled Mono wafer,cell,Uniform,0.3675,0.0,0.735
+2020,Purchase mg-Si,kg,Log-normal,2.5,2.0,3.0
+2020,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,7.2,5.8,8.6
+2020,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.24,0.19,0.29
+2020,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.22,0.17,0.26
+2020,Mono PERC module (exclude cell cost),module,Log-normal,39.0,31.0,47.0
+2020,Recycled mg-Si,kg,Uniform,1.5,0.0,3.0
+2020,Recycled SOG poly-Si,kg,Uniform,5.8,0.0,11.6
+2020,Recycled Mono wafer,cell,Uniform,0.245,0.0,0.49
