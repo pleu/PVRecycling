@@ -3,10 +3,10 @@ import pandas as pd
 def read_conversion_constants(filename, year):
   df = pd.read_csv(filename)
   df.columns = [col.lower() for col in df.columns]
-  rows = df[df['Year'] == year]
+  rows = df[df['year'] == year]
   if rows.empty:
     raise ValueError(f"No data found for year {year}")
-  return rows.drop(columns='Year').iloc[0].to_dict()
+  return rows.drop(columns='year').iloc[0].to_dict()
 
 def read_year_filtered_data(filename, year, converters=None):
   df = pd.read_csv(filename, converters=converters)
