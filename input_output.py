@@ -2,8 +2,8 @@ import pandas as pd
 
 def read_conversion_constants(filename, year):
   df = pd.read_csv(filename)
-  df.columns = [col.lower() for col in df.columns]
-  rows = df[df['year'] == year]
+  df.columns = [col.lower() for col in df.columns]  # make column names lowercase
+  rows = df[df['year'] == year]                     # match the 'year' column
   if rows.empty:
     raise ValueError(f"No data found for year {year}")
   return rows.drop(columns='year').iloc[0].to_dict()
