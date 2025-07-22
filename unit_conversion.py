@@ -11,8 +11,8 @@ def build_conversion_matrix(year):
   kg_per_cell = variables['kg_per_cell']
   cell_active_area = variables['cell_active_area']
   efficiency = variables['efficiency']
-  cell_to_module_ratio = variables.get('cell_to_module_ratio', 0.98)
-  cells_per_module = variables.get('cells_per_module', 60)
+  cell_to_module_ratio = variables['cell_to_module_ratio']
+  cells_per_module = variables.get['cells_per_module']
 
   wp_per_cell = cell_active_area * efficiency * Wp_per_m2
   cells_per_kg = 1 / kg_per_cell
