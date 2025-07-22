@@ -1,3 +1,7 @@
+# This file contains historical PV prices
+# For data up to 2020, the data is taken from ITRPV 2020
+# For data beyond 2020, the data is taken from ITRPV 2025 but assuming 
+# the same breakdown of processes by percentage
 year,mono-module ($/Wp),mono-cell ($/Wp),mono-wafer ($/Wp),poly-Si ($/Wp)
 14,0.832026359,0.435140522,0.253991715,0.10389905
 14.02,0.831825218,0.433458522,0.254022616,0.101988979

@@ -2,6 +2,7 @@ import pandas as pd
 
 def read_conversion_constants(filename, year):
   df = pd.read_csv(filename)
+  df.columns = [col.lower() for col in df.columns]
   rows = df[df['Year'] == year]
   if rows.empty:
     raise ValueError(f"No data found for year {year}")
