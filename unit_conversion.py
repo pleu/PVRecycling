@@ -4,7 +4,7 @@ from input_output import read_conversion_constants
 # def build_conversion_matrix(year): filename = "./data/solar_module_data.csv"
 
 def build_conversion_matrix(year, data_path="./data/solar_module_data.csv"):
-  filename = "./data/solar_module_data.csv"
+  filename = data_path
   variables = read_conversion_constants(filename, year)
   Wp_per_m2 = 1000
   # Conversion constants for poly-Si
