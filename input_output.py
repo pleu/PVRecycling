@@ -20,8 +20,8 @@ def read_efficiency_data(year):
   df = read_year_filtered_data("./data/efficiency_data.csv", year,{"Efficiency Range": eval})
   return df
 
-def read_production_steps(year):
-  df = read_year_filtered_data("./data/production_step_data.csv", year,{"Process Cost Range": eval})
-  return df
+# def read_production_steps(year): df = read_year_filtered_data("./data/production_step_data.csv", year,{"Process Cost Range": eval})
 
-
+def read_production_steps(year, data_path="data/production_step_data.csv"):
+    df = pd.read_csv(data_path)
+    return df[df["Year"] == year]
