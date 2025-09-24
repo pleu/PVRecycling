@@ -1,8 +1,10 @@
 import pandas as pd
 from input_output import read_conversion_constants
 
-def build_conversion_matrix(year):
-  filename = "./data/solar_module_data.csv"
+# def build_conversion_matrix(year): filename = "./data/solar_module_data.csv"
+
+def build_conversion_matrix(year, data_path="./data/solar_module_data.csv"):
+  filename = data_path
   variables = read_conversion_constants(filename, year)
   Wp_per_m2 = 1000
   # Conversion constants for poly-Si
@@ -12,15 +14,12 @@ def build_conversion_matrix(year):
   cell_active_area = variables['cell_active_area']
   efficiency = variables['efficiency']
   cell_to_module_ratio = variables['cell_to_module_ratio']
-  cells_per_module = variables['cells_per_module']
+  cells_per_module = variables['cells_per_module'] if 'cells_per_module' in variables else 60
 
   wp_per_cell = cell_active_area * efficiency * Wp_per_m2
   cells_per_kg = 1 / kg_per_cell
   kg_per_module = kg_per_cell * cells_per_module
   wp_per_module = wp_per_cell * cells_per_module * cell_to_module_ratio
-
-  units = ['kg', 'wafer', 'cell', 'module', 'Wp']
-  conversion_matrix = pd.DataFrame(1.0, index=units, columns=units)
 
   units = ['kg', 'wafer', 'cell', 'module', 'Wp']
   conversion_matrix = pd.DataFrame(1.0, index=units, columns=units)
@@ -44,19 +43,32 @@ def build_conversion_matrix(year):
   return conversion_matrix
 
 def convert_dataframe_units(df, target_unit, conversion_matrix):
-  """Convert the units of a dataframe using the conversion matrix."""
-  df_converted = df.copy()
+    """Convert the units of a dataframe using the conversion matrix."""
+    df_converted = df.copy()
 
-  def convert_row(row):
-    from_unit = row['Unit']
-    if from_unit == target_unit:
-      return row
-    factor = conversion_matrix.at[from_unit, target_unit]
-    row['Process Cost'] *= factor
-    row['Process Cost Min'] *= factor
-    row['Process Cost Max'] *= factor
-    row['Unit'] = target_unit
-    return row
+    def norm(u):
+        return str(u).strip() if pd.notna(u) else u
 
-  return df_converted.apply(convert_row, axis=1)
+    tgt = norm(target_unit)
 
+    def convert_row(row):
+        from_unit = norm(row.get('Unit', None))
+        if from_unit is None or from_unit == tgt:
+            row['Unit'] = tgt if from_unit is not None else tgt
+            return row
+
+        factor = conversion_matrix.at[from_unit, tgt]
+
+        row['Process Cost'] = row['Process Cost'] * factor
+
+        min_col = 'Process Cost Min'
+        max_col = 'Process Cost Max'
+        if min_col in row and pd.notna(row[min_col]):
+            row[min_col] = row[min_col] * factor
+        if max_col in row and pd.notna(row[max_col]):
+            row[max_col] = row[max_col] * factor
+
+        row['Unit'] = tgt
+        return row
+
+    return df_converted.apply(convert_row, axis=1)
