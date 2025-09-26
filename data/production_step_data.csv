@@ -1,49 +1,49 @@
-Year,Production Step,Unit,Distribution,Process Cost,Process Cost Min,Process Cost Max,,,
-2020,Purchase mg-Si,kg,Log-normal,2.5,2,3,,,
-2020,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,7.2,5.8,8.6,,,
-2020,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.24,0.19,0.29,,,
-2020,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.22,0.17,0.26,,,
-2020,Mono PERC module (exclude cell cost),module,Log-normal,39,31,47,,,
-2020,Recycled mg-Si,kg,Uniform,1.5,0,3,,,
-2020,Recycled SOG poly-Si,kg,Uniform,5.8,0,11.6,,,
-2020,Recycled Mono wafer,wafer,Uniform,0.245,0,0.49,,,
-2021,Purchase mg-Si,kg,Log-normal,2.5,2,3,,,
-2021,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,7.2,5.8,8.6,,,
-2021,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.24,0.19,0.29,,,
-2021,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.22,0.17,0.26,,,
-2021,Mono PERC module (exclude cell cost),module,Log-normal,39,31,47,,,
-2021,Recycled mg-Si,kg,Uniform,1.5,0,3,,,
-2021,Recycled SOG poly-Si,kg,Uniform,5.8,0,11.6,,,
-2021,Recycled Mono wafer,wafer,Uniform,0.25,0,0.49,,,
-2022,Purchase mg-Si,kg,Log-normal,4.98,3.98,5.98,,,
-2022,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,4.06,3.25,4.87,,,
-2022,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.23,0.19,0.28,,,
-2022,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.2,0.16,0.24,,,
-2022,Mono PERC module (exclude cell cost),module,Log-normal,40.91,32.73,49.09,,,
-2022,Recycled mg-Si,kg,Uniform,2.49,0,4.98,,,
-2022,Recycled SOG poly-Si,kg,Uniform,2.03,0,4.06,,,
-2022,Recycled Mono wafer,wafer,Uniform,0.12,0,0.23,,,
-2023,Purchase mg-Si,kg,Log-normal,3.63,2.9,4.36,,,
-2023,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,7.48,5.99,8.98,,,
-2023,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.31,0.24,0.37,,,
-2023,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.27,0.21,0.32,,,
-2023,Mono PERC module (exclude cell cost),module,Log-normal,54.17,43.33,65,,,
-2023,Recycled mg-Si,kg,Uniform,1.82,0,3.63,,,
-2023,Recycled SOG poly-Si,kg,Uniform,3.74,0,7.48,,,
-2023,Recycled Mono wafer,wafer,Uniform,0.15,0,0.31,,,
-2024,Purchase mg-Si,kg,Log-normal,3.24,2.59,3.89,,,
-2024,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,2.64,2.11,3.17,,,
-2024,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.16,0.13,0.19,,,
-2024,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.14,0.11,0.17,,,
-2024,Mono PERC module (exclude cell cost),module,Log-normal,28.67,22.94,34.41,,,
-2024,Recycled mg-Si,kg,Uniform,1.62,0,3.24,,,
-2024,Recycled SOG poly-Si,kg,Uniform,1.32,0,2.64,,,
-2024,Recycled Mono wafer,wafer,Uniform,0.08,0,0.16,,,
-2025,Purchase mg-Si,kg,Log-normal,3.36,2.69,4.03,,,
-2025,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,0.72,0.57,0.86,,,
-2025,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.11,0.09,0.13,,,
-2025,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.1,0.08,0.12,,,
-2025,Mono PERC module (exclude cell cost),module,Log-normal,19.87,15.89,23.84,,,
-2025,Recycled mg-Si,kg,Uniform,1.68,0,3.36,,,
-2025,Recycled SOG poly-Si,kg,Uniform,0.36,0,0.72,,,
-2025,Recycled Mono wafer,wafer,Uniform,0.06,0,0.11,,,
+Year,Production Step,Unit,Distribution,Process Cost,Process Cost Min,Process Cost Max
+2020,Purchase mg-Si,kg,Log-normal,2.5,2,3
+2020,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,7.2,5.8,8.6
+2020,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.24,0.19,0.29
+2020,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.22,0.17,0.26
+2020,Mono PERC module (exclude cell cost),module,Log-normal,39,31,47
+2020,Recycled mg-Si,kg,Uniform,1.5,0,3
+2020,Recycled SOG poly-Si,kg,Uniform,5.8,0,11.6
+2020,Recycled Mono wafer,wafer,Uniform,0.245,0,0.49
+2021,Purchase mg-Si,kg,Log-normal,1.79,1.432,2.148
+2021,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,7.403662,5.9229296,8.8843944
+2021,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.237095,0.189676,0.284514
+2021,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.205986,0.1647888,0.2471832
+2021,Mono PERC module (exclude cell cost),module,Log-normal,41.615492,33.2923936,49.9385904
+2021,Recycled mg-Si,kg,Uniform,0.895,0,1.79
+2021,Recycled SOG poly-Si,kg,Uniform,3.701831,0,7.403662
+2021,Recycled Mono wafer,wafer,Uniform,0.1185475,0,0.237095
+2022,Purchase mg-Si,kg,Log-normal,4.98,3.984,5.976
+2022,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,4.062253,3.2498024,4.8747036
+2022,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.233028,0.1864224,0.2796336
+2022,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.203187,0.1625496,0.2438244
+2022,Mono PERC module (exclude cell cost),module,Log-normal,40.910513,32.7284104,49.0926156
+2022,Recycled mg-Si,kg,Uniform,2.49,0,4.98
+2022,Recycled SOG poly-Si,kg,Uniform,2.0311265,0,4.062253
+2022,Recycled Mono wafer,wafer,Uniform,0.116514,0,0.233028
+2023,Purchase mg-Si,kg,Log-normal,3.63,2.904,4.356
+2023,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,7.483102,5.9864816,8.9797224
+2023,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.305337,0.2442696,0.3664044
+2023,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.266423,0.2131384,0.3197076
+2023,Mono PERC module (exclude cell cost),module,Log-normal,54.168655,43.334924,65.002386
+2023,Recycled mg-Si,kg,Uniform,1.815,0,3.63
+2023,Recycled SOG poly-Si,kg,Uniform,3.741551,0,7.483102
+2023,Recycled Mono wafer,wafer,Uniform,0.1526685,0,0.305337
+2024,Purchase mg-Si,kg,Log-normal,3.24,2.592,3.888
+2024,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,2.643133,2.1145064,3.1717596
+2024,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.161504,0.1292032,0.1938048
+2024,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.141083,0.1128664,0.1692996
+2024,Mono PERC module (exclude cell cost),module,Log-normal,28.673825,22.93906,34.40859
+2024,Recycled mg-Si,kg,Uniform,1.62,0,3.24
+2024,Recycled SOG poly-Si,kg,Uniform,1.3215665,0,2.643133
+2024,Recycled Mono wafer,wafer,Uniform,0.080752,0,0.161504
+2025,Purchase mg-Si,kg,Log-normal,3.36,2.688,4.032
+2025,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,0.715908,0.5727264,0.8590896
+2025,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.111992,0.0895936,0.1343904
+2025,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.097822,0.0782576,0.1173864
+2025,Mono PERC module (exclude cell cost),module,Log-normal,19.86651,15.893208,23.839812
+2025,Recycled mg-Si,kg,Uniform,1.68,0,3.36
+2025,Recycled SOG poly-Si,kg,Uniform,0.357954,0,0.715908
+2025,Recycled Mono wafer,wafer,Uniform,0.055996,0,0.111992
