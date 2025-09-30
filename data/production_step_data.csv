@@ -46,4 +46,4 @@ Year,Production Step,Unit,Distribution,Process Cost,Process Cost Min,Process Cos
 2025,Mono PERC module (exclude cell cost),module,Log-normal,36.203207,28.9625656,43.4438484
 2025,Recycled mg-Si,kg,Uniform,1.68,0.0,3.36
 2025,Recycled SOG poly-Si,kg,Uniform,0.357954,0.0,0.715908
-2025,Recycled Mono wafer,wafer,Uniform,0.0443015,0.0,0.088603
+2025,Recycled Mono wafer,wafer,Log-normal,0.057,0.0456,0.0684
