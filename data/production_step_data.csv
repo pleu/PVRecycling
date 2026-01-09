@@ -39,11 +39,12 @@ Year,Production Step,Unit,Distribution,Process Cost,Process Cost Min,Process Cos
 2024,Recycled mg-Si,kg,Uniform,1.62,0,3.24
 2024,Recycled SOG poly-Si,kg,Uniform,1.3215665,0,2.643133
 2024,Recycled Mono wafer,wafer,Uniform,0.080752,0,0.161504
-2025,Purchase mg-Si,kg,Log-normal,3.36,2.688,4.032
-2025,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,0.715908,0.5727264,0.8590896
+2025,Purchase mg-Si,kg,Log-normal,17.31,13.848,20.772
+2025,SoG Poly-Si (exclude mg-Si cost),kg,Log-normal,3.69,2.952,4.428
 2025,Mono Wafer (exclude poly-Si cost),wafer,Log-normal,0.111992,0.0895936,0.1343904
 2025,Mono PERC cell (exclude wafer cost),cell,Log-normal,0.097822,0.0782576,0.1173864
 2025,Mono PERC module (exclude cell cost),module,Log-normal,19.86651,15.893208,23.839812
 2025,Recycled mg-Si,kg,Uniform,1.68,0,3.36
 2025,Recycled SOG poly-Si,kg,Uniform,0.357954,0,0.715908
 2025,Recycled Mono wafer,wafer,Uniform,0.057,0.0456,0.0684
+
