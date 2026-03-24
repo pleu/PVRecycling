@@ -1,8 +1,8 @@
 Process,Laboratory Scale,Pilot Scale,Industrial Scale
 Water Jet Cutting,413,0,0
-Junction Box Dismantling,0,0.4,3
-Frame Removal,0,3,2
-Thermal Treatment,912,63,7
+Junction Box Dismantling,0,0.4,1
+Frame Removal,0,1,2
+Thermal Treatment,912,63,2
 Cell Recovery, 5.7, 0.6, 0.6
 Forklift Operation,0,2,2
 Conveyor Belt Operation,0,0,5
