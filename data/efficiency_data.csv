@@ -46,4 +46,4 @@ bifacial,2024,D,Uniform,0.206,0.18025,0.23175
 bifacial,2025,A,Normal,0.2369,0.23175,0.24205
 bifacial,2025,B,Uniform,0.2369,0.23175,0.24205
 bifacial,2025,C,Uniform,0.21115,0.1854,0.2369
-bifacial,2025,D,Uniform,0.21115,0.1854,0.2369
+bifacial,2025,D,Normal,0.1794,0.1679,0.1909
