@@ -1,0 +1,8 @@
+Process,Laboratory scale,Pilot scale,Industrial scale
+Forklift operation,0,2,2
+Aluminum frame dismantling,0,1,1
+Junction box dismantling,0,0.4,0.4
+Water jet cutting,413,0,0
+Conveyor belt operation,0,0,5
+Thermal treatment,912,63,46
+Cell recovery and characterization,5.7,0.6,0.6
